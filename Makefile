@@ -1,3 +1,5 @@
+.PHONY: db-tunnel db-tunnel-kill db-shell api-tunnel api-tunnel-kill tunnel-kill
+
 HOST=fluwide
 DB_PORT=3306
 DB_TUNNEL=$(DB_PORT):localhost:$(DB_PORT)
@@ -15,4 +17,6 @@ api-tunnel:
 	ssh -f -N -L $(API_PORT) $(HOST)
 api-tunnel-kill:
 	kill -9 $(shell ps aux | grep 'ssh -f -N -L $(API_PORT) $(HOST)' | grep -v grep | awk '{print $$2}')
+
+tunnel-kill: db-tunnel-kill api-tunnel-kill
 
