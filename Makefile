@@ -18,5 +18,6 @@ api-tunnel:
 api-tunnel-kill:
 	kill -9 $(shell ps aux | grep 'ssh -f -N -L $(API_PORT) $(HOST)' | grep -v grep | awk '{print $$2}')
 
+tunnel: db-tunnel api-tunnel
 tunnel-kill: db-tunnel-kill api-tunnel-kill
 

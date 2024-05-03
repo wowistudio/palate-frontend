@@ -9,18 +9,49 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.1"
+    "@sentry/nextjs": "^7.77.0",
+    "@types/js-cookie": "^3.0.3",
+    "@types/lodash.orderby": "^4.6.7",
+    "@types/node": "20.2.5",
+    "@types/qs": "^6.9.7",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "^18",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.6.0",
+    "class-variance-authority": "^0.7.0",
+    "date-fns": "^2.30.0",
+    "dayjs": "^1.11.9",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
+    "fs": "^0.0.1-security",
+    "jotai": "^2.3.1",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^3.1.2",
+    "lodash.orderby": "^4.6.0",
+    "next": "^13.5.6",
+    "next-auth": "^4.24.5",
+    "next-intl": "^3.11.1",
+    "object.fromentries": "^2.0.6",
+    "postcss": "8.4.31",
+    "qs": "^6.11.2",
+    "rc-util": "^5.36.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swr": "^2.2.0",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.1"
+    "@types/jsonwebtoken": "^9.0.5",
+    "dotenv": "^16.3.1",
+    "got": "11.8.5",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2"
+  },
+  "engines": {
+    "node": ">=18.16.0 <19.0.0"
   }
 }
