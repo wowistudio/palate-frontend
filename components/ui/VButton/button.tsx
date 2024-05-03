@@ -5,7 +5,7 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
-import {useButton} from "@mui/base";
+import {Button, useButton} from "@mui/base";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -44,15 +44,24 @@ export interface ButtonProps
 
 const VButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     const { className, variant, size, asChild = false, ...restProps } = props
-    const { getRootProps } = useButton();
+    const { getRootProps } = useButton({
+      tabIndex: 5,
+    });
     const Comp = asChild ? Slot : "button"
+    const klass = cn(buttonVariants({ variant, size, className }))
+
     return (
-      <Comp
-        {...getRootProps}
+      <Button
         {...restProps}
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={klass}
         ref={ref}
-      />
+        />
+      // <Comp
+      //   {...restProps}
+      //   {...getRootProps}
+      //   className={klass}
+      //   ref={ref}
+      // />
     )
   }
 )
